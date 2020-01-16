@@ -1,5 +1,11 @@
-# angular-7-registration-login-example
+#Test 
+1-Validation Form Reactive Forms
+2-Table With Sorting And Pagination
+3-Add Form Values
+4-Update Form Values
+5-Delete Form Values
+6-Make Json Server For Put,Post And Fetch Data
 
-Angular 7 User Registration and Login Example with Angular CLI
-
-Full tutorial with example available at http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"# RateReview" 
+#For json server Run
+Step-1:open assets in terminal 
+step-2:run command json-server --watch db.json
