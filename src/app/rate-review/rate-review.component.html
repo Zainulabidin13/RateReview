@@ -1,0 +1,247 @@
+<div class="col-lg-12 background">
+  <h4 class="heading-tx-color" align="center">Rate Review</h4>
+</div>
+<br>
+<form [formGroup]="RateViewForm" (ngSubmit)="createAndUpdate(RateViewForm.value)">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Description" type="text" formControlName="description" required>
+        </mat-form-field>
+        <div class="form-control-feedback"
+          *ngIf="RateViewForm.controls.description.dirty && RateViewForm.controls.description.invalid">
+          <p *ngIf="RateViewForm.controls.description.errors.required">This field is required</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>SIC Code</mat-label>
+      <mat-select formControlName="sicCode" required>
+        <mat-option>--</mat-option>
+        <mat-option value="5812 Resturant">
+          5812 Resturant
+        </mat-option>
+        <mat-option value="5823 Hospital">
+          5823 Hospital
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-control-feedback"
+    *ngIf="RateViewForm.controls.sicCode.dirty && RateViewForm.controls.sicCode.invalid">
+    <p *ngIf="RateViewForm.controls.sicCode.errors.required">This field is required</p>
+  </div>
+    </div>
+    </div>
+    <!-- <div class="col-lg-6">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <mat-label>SIC Code</mat-label>
+          <mat-select fromControlName="sicCode" >
+            <mat-option disabled value="">Select Sic Code</mat-option>
+            <mat-option value="5812 Resturant">5812 Resturant</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="form-control-feedback"
+                          *ngIf="RateViewForm.controls.sicCode.dirty && RateViewForm.controls.sicCode.invalid">
+                          <p *ngIf="RateViewForm.controls.sicCode.errors.required">This field is required</p>
+                        </div>
+      </div>
+    </div> -->
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Visa Old Value" formControlName="visaOldValue">
+          <mat-hint>Enter Visa Old Rate!</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Visa Current Value" formControlName="visaCurrentValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Master Card Old Value" formControlName="masterCardOldValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Master Card Current Value"
+            formControlName="masterCardCurrentValue" />
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Debit Card Old Value" formControlName="debitCardOldValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Debit Card Current Value" formControlName="debitCardCurrentValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="HBL Old Value" formControlName="hblOldValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="HBL Current Value" formControlName="hblCurrentValue">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Total Volume" formControlName="totalVolume" required>
+        </mat-form-field>
+        <div class="form-control-feedback"
+                          *ngIf="RateViewForm.controls.totalVolume.dirty && RateViewForm.controls.totalVolume.invalid">
+                          <p *ngIf="RateViewForm.controls.totalVolume.errors.required">This field is required</p>
+                        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Total Transaction" formControlName="totalTransaction" required>
+        </mat-form-field>
+        <div class="form-control-feedback"
+                          *ngIf="RateViewForm.controls.totalTransaction.dirty && RateViewForm.controls.totalTransaction.invalid">
+                          <p *ngIf="RateViewForm.controls.totalTransaction.errors.required">This field is required</p>
+                        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="AVG Ticket" formControlName="avgTicket">
+        </mat-form-field>
+        <div class="form-control-feedback"
+        *ngIf="RateViewForm.controls.avgTicket.dirty && RateViewForm.controls.avgTicket.invalid">
+        <p *ngIf="RateViewForm.controls.avgTicket.errors.required">This field is required</p>
+      </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Current Fees" formControlName="currentRate">
+        </mat-form-field>
+        <div class="form-control-feedback"
+        *ngIf="RateViewForm.controls.currentRate.dirty && RateViewForm.controls.currentRate.invalid">
+        <p *ngIf="RateViewForm.controls.currentRate.errors.required">This field is required</p>
+      </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Current Amex Fees" formControlName="currentAmexFees">
+        </mat-form-field>
+        <div class="form-control-feedback"
+        *ngIf="RateViewForm.controls.currentAmexFees.dirty && RateViewForm.controls.currentAmexFees.invalid">
+        <p *ngIf="RateViewForm.controls.currentAmexFees.errors.required">This field is required</p>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <div class="row" style="float: right;">
+    <div class="col-lg-12">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" style="background: #343a40;;
+      border-color: #ced4da;" (click)="cancel()" routerLinkActive="router-link-active">Cancel</button>
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="i">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> No. </th>
+    <td mat-cell *matCellDef="let element ;let i = index;" width="10%"> {{i+1}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> Description </th>
+    <td mat-cell *matCellDef="let element" width="10%"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sicCode">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> SIC Code </th>
+    <td mat-cell *matCellDef="let element" width="10%"> {{element.sicCode}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="totalVolume">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> Total Volume </th>
+    <td mat-cell *matCellDef="let element" width="10%"> {{element.totalVolume}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalTransaction">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> Total Transction </th>
+    <td mat-cell *matCellDef="let element" width="10%"> {{element.totalTransaction}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="avgTicket">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> Avg Ticket </th>
+    <td mat-cell *matCellDef="let element" width="10%"> {{element.avgTicket}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef width="10%">Action</th>
+    <mat-cell *matCellDef="let element" fxHide fxShow.gt-xs style="padding-left: 0px;">
+      <div fxFlex="element" align="right">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item mat-menu-item aria-label="Edit" matTooltip="Edit" (click)="Edit(element.id)">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item mat-menu-item aria-label="Delete" matTooltip="Delete"
+            (click)="employeeDelete(element.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-cell>
+
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

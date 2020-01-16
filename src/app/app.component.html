@@ -1,0 +1,22 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav" align="right">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/leave_requests">Rate Review</a>
+      
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron" style="background-color: #ced4da;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 ">
+               
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- credits -->
